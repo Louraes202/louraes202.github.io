@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sistemas de Comunicação</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="redes2.ico">
+    <link rel="stylesheet" href="normal.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+        body {font-size:16px;}
+        .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+        .w3-half img:hover{opacity:1}
+    </style>
+</head>
+<body>
+
+<!--
+    NOTAS:
+        custom color: purple
+
+-->
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-purple w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <a href="https://github.com/Louraes202" target="_blank">
+        <img src="images/martim.png" class="w3-image grow" id="sitelogo" class="grow">
+      </a>
+      <h3 class="w3-padding-16"><b>Martim<br>Loureiro</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+      <a href="#imagens" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Imagens</a> 
+      <a href="#oqueé" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">O que é?</a> 
+      <a href="#comofuncionam" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Como funcionam?</a> 
+      <a href="#exemplos" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Exemplo</a> 
+      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+    </div>
+
+    <!-- Icones com hiperligações -->
+    <div id="hyperlinks"> 
+      <img src="images/github2.png" class="hyperlogo">
+      <img src="images/instagram.png" class="hyperlogo">
+      <img src="images/facebook2.png" class="hyperlogo">
+      <img src="images/github2.png" class="hyperlogo">
+      <img src="images/github2.png" class="hyperlogo">
+    </div>
+  </nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-purple w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-purple w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Martim Loureiro</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="imagens">
+    <h1 class="w3-jumbo"><b>Sistemas de Comunicação</b></h1>
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Imagens</b></h1>
+    <hr style="width:50px;border:5px solid purple" class="w3-round">
+  </div>
+  
+  <!-- Photo grid -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="images/walkietalkies.png" style="width:100%" onclick="onClick(this)" alt="Walkie talkies são um sistema de comunicação.">
+      <img src="images/oldphone.png" style="width:100%" onclick="onClick(this)" alt="Os telefones analógicos são sistemas de comunicação.">
+      <img src="images/newphone.png" style="width:100%" onclick="onClick(this)" alt="Os telefones digitais são sistemas de comunicação.">
+    </div>
+
+    <div class="w3-half">
+      <img src="images/discovinil.jpg" style="width:100%" onclick="onClick(this)" alt="Os discos vinil são sistemas de comunicação.">
+      <img src="images/cd.png" style="width:100%" onclick="onClick(this)" alt="Os cd's são sistemas de comunicação.">
+      <img src="images/telemóvel.png" style="width:100%" onclick="onClick(this)" alt="Os telemóveis são sistemas de comunicação.">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- O que é? -->
+  <div class="w3-container" id="oqueé" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>O que é?</b></h1>
+    <hr style="width:50px;border:5px solid purple" class="w3-round">
+    <p>O que é um sistema de comunicação?</p>
+    <p>Um <b>sistema de comunicação</b> é um grupo de componentes de comunicação integrados em um sistema conexo. 
+      Estes componentes, por norma, são meios e sistemas de transmissão, redes de computadores e protocolos, 
+      que quando compatíveis uns com os outros, operam em união e cumprem a sua finalidade de transmitir/receber 
+      uma mensagem (assegurar a comunicação entre A e B).
+    </p>
+    <p>Existem vários sistemas de comunicação, e neste website vou explicar como funcionam estes sistemas na 
+      sua generalidade e depois vou utilizar um exemplo (walkie-talkies) para explicar o quão complexo um sistema
+      destes pode ser.</p>
+  </div>
+  
+  <!-- Como funcionam? -->
+  <div class="w3-container" id="comofuncionam" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Como funcionam?</b></h1>
+    <hr style="width:50px;border:5px solid purple" class="w3-round">
+    <p>Como funciona um sistema de comunicação?</p>
+    <p>Qualquer sistema de comunicação funcionará através de <b>transmissões</b> entre os seus diversos componentes. 
+      O tipo de transmissão irá variar de dispositivo para dispositivo ou, contextualmente, de emissor para recetor.
+      Em todas as transmissões existem um <b>emissor</b>, um <b>recetor</b>, um <b>meio de transmissão</b> e a mensagem a ser transmitida
+      no seu respetivo <b>idioma</b>.
+    </p>
+    <img src="images/emissorrecetor.png" class="w3-image center">
+    <p>Para a mensagem ser recebida e <b>compreendida</b> pelo recetor, é preciso os dois comunicarem-se através
+      do mesmo idioma. Existem vários fatores como a qualidade do meio de transmissão e o tipo de informação que 
+      vão garantir a eficiência da transmissão de uma determinada mensagem neste processo.
+    </p>
+    <p>
+      O <b>processo de comunicação</b> representa todas a etapa de um momento em que a parte A comunica com a
+      parte B transmitindo uma mensagem. Este divide-se nos seguintes passos:
+    </p>
+    <ol>
+      <li>O emissor gera a informação.</li>
+      <li>Para poder transmitir a informação com precisão, o emissor utiliza um conjunto de
+        símbolos conhecidos pelo recetor.</li>
+      <li>Esses símbolos são codificados para que possam ser transmitidos pelo meio físico
+        disponível.</li>
+      <li>Em seguida, ocorre a transmissão de símbolos codificados (o sinal) ao recetor
+        (destinatário).</li>
+      <li>Os símbolos são decodificados e reproduzidos.</li>
+      <li>A última etapa é a recriação, pelo recetor, da informação transmitida, mesmo com uma
+        possível degradação da qualidade de sinal</li>
+    </ol>
+    
+    <p><b>Tipos de transmissão</b>:</p>
+  </div>
+
+  <!-- IN COMO FUNCIONA tipos de transmissão -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/simplex.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Simplex</h3>
+          <p class="w3-opacity">Ex: Rádio, TV</p>
+          <p>Neste tipo de transmissão, o emissor manda a mensagem para o recetor, de modo unidirecional e
+            sem que haja resposta por parte de recetor. Resumidamente, a mensagem enviada pelo emissor é recebida
+            pelo recetor sem que haja resposta.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/halfduplex.jpg" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>Half-Duplex</h3>
+          <p class="w3-opacity">Ex: Walkie-Talkie</p>
+          <p>Neste tipo de transmissão, o ponto A pode enviar uma mensagem para o ponto B, e o ponto B pode também mandar
+            uma mensagem para o ponto A, porém, a troca de mensagens entre os dois não pode ser em simultâneo, isto é, 
+            tem que haver uma transmissão de cada vez e enquanto estiver a ocorrer uma transmissão só pode ocorrer esta e
+            somente esta transmissão. Resumidamente, não podem haver transmissões entre ponto A e ponto B ao mesmo tempo.
+            Para o ponto B enviar uma mensagem, tem de esperar que o ponto A termine a sua transmissão, e vice-versa.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/fullduplex.jpg" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Full-Duplex</h3>
+          <p class="w3-opacity">Ex: Chamada de áudio/vídeo</p>
+          <p>Neste tipo de transmissão, podem haver transmissões em simultâneo de A para B e de B para A, ao contrário
+            do half-duplex. Resumidamente, o emissor e o recetor podem variar e podem existir várias mensagens ao
+            mesmo tempo, não sendo preciso esperar uma transmissão acabar para começar outra.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exemplo (Walkie-Talkies) -->
+  <div class="w3-container" id="exemplos" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Exemplo</b></h1>
+    <hr style="width:50px;border:5px solid purple" class="w3-round">
+    <a style="text-decoration: none" class="w3-xxlarge w3-text-purple" href="#imagens"><b>Walkie-Talkies</b></a>
+    <p>
+      Para explicar a matéria na prática, vamos aplicá-la em um exemplo real e relativamente comum, os 
+      <b>Walkie-Talkies</b>. Estes dispositivos são perfeitos para exemplificar todos os conceitos de redes
+      de comunicação envolvidos neste sistema por serem um exemplo comum e que todos conhecemos, logo é fácil
+      aplicar estes conceitos e percebê-los.
+    </p>
+    <!-- Comunicação -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Comunicação</b></h1> 
+      <p>Exemplificando um cenário com walkie-takies, uma pessoa tem o dispositivo A e outra pessoa tem o 
+        dispositivo B. 
+        A pessoa com o dispositivo A quer enviar uma mensagem à pessoa com o dispositivo B, logo, o dispositivo A 
+        será o <b>emissor</b>, o dispositivo B será o <b>recetor</b> e a <b>mensagem</b> será transmitida através
+        de um dos canais dos walkie-talkies, que será o <b>meio de transmissão</b> da mensagem, sendo a 
+        mensagem correspondente ao que a pessoa A disser no canal à pessoa B. <br>
+        Para isto ser bem sucedido, ambos precisam de estar no mesmo canal enquanto ocorre a transmissão da 
+        mensagem.
+
+      </p>
+
+    <!-- Tipo de transmissão -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Tipo de transmissão</b></h1> 
+      <p>O tipo de transmissão utilizado pelos walkie-talkies é a <b>Half-Duplex</b>. <br>
+      Quando estamos a usar walkie-talkies, só podemos falar num canal se ninguém estiver a falar, isto
+      é, duas ou mais pessoas não podem falar ao mesmo tempo, porque o sentido da comunicação é unidirecional.
+      Se tentarmos falar enquanto alguém já estiver a falar, cancelamos a comunicação do canal, porque neste tipo 
+      de sistemas não é possível enviar mensagens ao mesmo tempo que recebemos.
+      Nos telemóveis, por exemplo, em chamada normal, o sentido da comunicação é bidirecional, isto é, é um
+      sistema full-duplex, em que podemos receber e enviar mensagens simultaneamente 
+      (neste caso falar ao mesmo tempo que ouvimos).</p>
+
+    <!-- Transmissão por difusão ou ponto a ponto  -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Transmissão por difusão e ponto a ponto</b></h1> 
+      <p>As transmissões podem ser feitas por <b>difusão</b> (broadcast), <b>difusão seletiva</b> (multicast) ou <b>ponto a ponto</b> 
+      (peer to peer). <br>
+      Ocorre difusão quando a mensagem é simultaneamente transmitida para todos (não definidos) os recetores, 
+      e a difusão 
+      seletiva é o mesmo processo só que para um grupo de recetores previamente conhecido e identificado. No 
+      caso de trasnmissão ponto a ponto, como o nome indica, a mensagem vai apenas de um emissor específico 
+      para um recetor específico. <br> </p>
+      <p>
+      No caso dos walkie-talkies com vários canais (os mais comuns), estamos perante um caso de difusão (broadcast), onde existe um canal em 
+      que um emissor passa a informação para todos os recetores que estiverem conectados ao canal. <br> 
+      No caso de walkie-takies específicos com apenas um canal em que só walkie-talkies daquele tipo são permitidos,
+      podemos dizer que é uma difusão seletiva (multicast). <br>
+      Se existirem dois aparelhos walkie-talkies que só sejam compatíveis entre si e com mais nenhum outro 
+      dispositivo, será então uma transmissão ponto a ponto.
+
+      </p>
+
+    <!--  -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Transmissão por baseband e broadband</b></h1> 
+      <p><b>Este conceito não se aplica aos walkie-talkies</b>, e sim a cabos de transmissão de informação (cabos de
+        rede).
+      </p>
+      <p>
+        Resumidamente, existem dois tipos de transmissão de informação por cabo: <b>baseband</b> (banda-base)
+        e <b>broadband</b> (banda larga). 
+        <br>
+        No caso da baseband, a informação é transmitida através de um único sinal digital de dados que ocupa a capacidade
+        máxima do canal, circulando a uma frequência única pelo cabo. Este caso é comum nas redes de tipo LAN.
+        <br>
+        No caso da broadband, é possível haver a circulação de vários sinais em simultâneo, mas os mesmos têm de ser 
+        analógicos. Esta técnica é usada em alguns cabos de rede como o ADSL.
+      </p>
+
+    <!-- Tipos de wireless -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Transmissão wireless</b></h1> 
+      <p>Tudo o que se refere a transmissão wireless refere-se a três tipos de transmissão sem fios:  </p>
+      <!-- Tipos de ondas separadores --> <!-- Matéria explicada -->
+      <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="images/ondesderadio.webp" alt="John" style="width:100%">
+            <div class="w3-container">
+              <h3>Ondas de rádio</h3>
+              <p class="w3-opacity">Ex: GPS Satélite, TV Digital, Walkie-Talkies, Rádio FM</p>
+              <p>
+                Neste tipo de ondas, o emissor e o recetor têm de estar na mesma linha de sinal, e estas transmissões 
+                podem ir até 30 metros de distâncias.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="images/infravermelhos.jpg" alt="Jane" style="width:100%">
+            <div class="w3-container">
+              <h3>Infravermelhos</h3>
+              <p class="w3-opacity">Ex: Comandos de garagem, tv, projetores</p>
+              <p>
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="images/ondasderadio.webp" alt="Mike" style="width:100%">
+            <div class="w3-container">
+              <h3>Micro-ondas</h3>
+              <p class="w3-opacity">Ex: Bluetooth, WIFI, WiMAX, Radares, eletrodomésticos</p>
+              <p>
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Os walkie-talkies são exemplos de transmissão sem fios através de <b>ondas de rádio</b>, como se pode ver nos 
+        exemplos do esquema anterior. 
+      </p>
+
+    <!--  -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Transmissão síncrona e assíncrona</b></h1> 
+      <p> <!-- Matéria explicada -->
+        
+      </p>
+      <p>No caso dos walkie-talkies (comunicação por rádio VHF), estamos perante comunicação síncrona. <br>
+      Como já foi explicado, é impossível falar enquanto outra pessoa estiver a falar nos walkie-talkies, ou 
+      seja, um fala e o outro escuta, e vice-versa, não há dois sentidos de mensagens em simultâneo. A mensagem 
+      é trafegada pelo canal de comunicação num único sentido.</p>
+
+    <!--  -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Sinais analógicos e digitais</b></h1> 
+      <p> <!-- Matéria explicada -->
+        
+      </p>
+      <p>
+        A maioria dos walkie-talkies, desde que foram inventados, utilizam sinais analógicos para se comunicarem 
+        entre si, sendo este um sinal cuja qualidade de transmissão tende a variar mediante a distância entre nós,
+        porém, com o avanço das tecnologias, já foram criados alguns walkie-takies que fazem uso do sinal digital.
+      </p>
+
+    <!--  -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Largura de banda e compressão de dados</b></h1> 
+      <p>
+        A largura de banda corresponde à capacidade de transmissão em um determinado contexto, seja este um meio
+        de transmissão, uma rede ou uma conexão. Este valor indica a velocidade a que os dados viajam entre dois
+        pontos, num determinado intervalo de tempo.
+      </p>
+      <p>No caso dos sinais analógicos, a largura de banda mede-se em heartz (Hz) e aplica-se aos walkie-takies
+        que utilizam tecnologia analógica. <br>
+        No caso dos sinais digitais, a largura de banda mede-se em bits por segundo (bps) e está presente nos
+        walkie-takies digitais.
+      </p>
+
+    <!--  -->
+    <h3 class="w3-xlarge w3-text-purple"><b>Modulação</b></h1> 
+      <p>Nos walkie-talkies digitais, o tipo de modulação das ondas do sinal digital é a Frequency Key Shifting, 
+        ou modulação em frequência, onde a ondas que correspondem ao bit 1 vão ser o dobro das ondas que correspondem 
+        ao bit 0.
+      </p>
+      <img src="images/fsk.png" class="w3-image center">
+  </div>
+
+
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Contact</b></h1>
+    <hr style="width:50px;border:5px solid purple" class="w3-round">
+    <p>Gostaste do website? Ficaste com alguma dúvida? Entra em contacto comigo! Basta preencheres o formulário a seguir.</p>
+    <!-- <form action="/action_page.php" target="_blank"> -->
+    <form method="post" action="https://forms.un-static.com/forms/042516b33cf9b9925ec7cb1ca602e9ed38d5c8d5">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-purple w3-margin-bottom">Send Message</button>
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- Author Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Made by Martim Loureiro, 11.ºH, Escola Secundária Emídio Navarro.</a></p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
